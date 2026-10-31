@@ -1,0 +1,3 @@
+[console_scripts]
+issueforge = issueforge_agent.cli:main
+issueforge-agent = issueforge_agent.cli:main

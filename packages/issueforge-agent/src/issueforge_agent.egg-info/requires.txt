@@ -1,0 +1,7 @@
+issueforge-core
+httpx>=0.27
+numpy>=1.26
+pydantic>=2.9
+
+[cuda]
+torch>=2.1

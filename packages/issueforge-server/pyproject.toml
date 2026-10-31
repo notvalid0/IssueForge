@@ -1,0 +1,34 @@
+[project]
+name = "issueforge-server"
+version = "0.1.0"
+description = "IssueForge server: GitHub Issue knowledge base, tracking and dashboard"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+
+dependencies = [
+  "issueforge-core",
+  "cryptography>=43",
+  "fastapi>=0.115",
+  "httpx>=0.27",
+  "numpy>=1.26",
+  "pydantic>=2.9",
+  "sqlalchemy>=2.0.36",
+  "uvicorn[standard]>=0.32",
+]
+
+[project.optional-dependencies]
+embeddings = ["sentence-transformers>=3.0"]
+
+[project.scripts]
+issueforge-server = "issueforge_server.cli:main"
+
+[tool.uv.sources]
+issueforge-core = { workspace = true }
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

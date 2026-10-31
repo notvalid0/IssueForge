@@ -1,0 +1,24 @@
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[tool.uv]
+dev-dependencies = [
+  "issueforge-core",
+  "issueforge-agent",
+  "issueforge-server",
+  "pytest>=8.3",
+  "pytest-cov>=5",
+]
+
+[tool.uv.sources]
+issueforge-core = { workspace = true }
+issueforge-agent = { workspace = true }
+issueforge-server = { workspace = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+  "gpu: tests that need a CUDA GPU / NCU",
+  "network: tests that call GitHub or an LLM",
+]

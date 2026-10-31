@@ -1,0 +1,2 @@
+[console_scripts]
+issueforge-server = issueforge_server.cli:main
